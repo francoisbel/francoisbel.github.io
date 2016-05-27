@@ -5,13 +5,13 @@
 //
 (function(ext) {
     var apiKey="b5c2a0e393ae20a80e3026cf94ad2950";
-    var api="http://api.openweathermap.org/data/2.5/weather?APPID="+apiKey+"q=";
+    var api="http://api.openweathermap.org/data/2.5/weather?APPID="+apiKey+"&q=";
 
     // Commands
     ext.getTemp = function(location, callback) {
         // Make an AJAX call to the Open Weather Maps API
         $.ajax({
-              url: 'http://api.openweathermap.org/data/2.5/weather?q='+location+'&units=metric',
+              url: api+location+'&units=metric',
               dataType: 'jsonp',
               success: function( weather_data ) {
                   // Got the data - parse it and return the temperature
@@ -24,7 +24,7 @@
     ext.getWindSpeed = function(location, callback) {
         // Make an AJAX call to the Open Weather Maps API
         $.ajax({
-              url: 'http://api.openweathermap.org/data/2.5/weather?q='+location+'&units=metric',
+              url: api+location+'&units=metric',
               dataType: 'jsonp',
               success: function( weather_data ) {
                   // Got the data - parse it and return the speed
@@ -37,7 +37,7 @@
     ext.getWindDirection = function(location, callback) {
         // Make an AJAX call to the Open Weather Maps API
         $.ajax({
-              url: 'http://api.openweathermap.org/data/2.5/weather?q='+location+'&units=metric',
+              url: api+location+'&units=metric',
               dataType: 'jsonp',
               success: function( weather_data ) {
                   // Got the data - parse it and return the direction
@@ -50,7 +50,7 @@
     ext.getCloudCover = function(location, callback) {
         // Make an AJAX call to the Open Weather Maps API
         $.ajax({
-              url: 'http://api.openweathermap.org/data/2.5/weather?q='+location+'&units=metric',
+              url: api+location+'&units=metric',
               dataType: 'jsonp',
               success: function( weather_data ) {
                   // Got the data - parse it and return the coverage
@@ -63,7 +63,7 @@
     ext.getWeather = function(location, callback) {
         // Make an AJAX call to the Open Weather Maps API
         $.ajax({
-              url: 'http://api.openweathermap.org/data/2.5/weather?q='+location+'&units=metric',
+              url: api+location+'&units=metric',
               dataType: 'jsonp',
               success: function( weather_data ) {
                   // Got the data - parse it and return the weather
